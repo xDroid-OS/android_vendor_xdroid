@@ -26,7 +26,8 @@ PRODUCT_PACKAGES += \
     GoogleConfigOverlay \
     SystemUIGoogleOverlay \
     StorageManagerGoogleOverlay \
-    FlipendoOverlay
+    FlipendoOverlay \
+    XDSetupOverlay
 
 # XDSettingsOverlay
 ifdef XDROID_MAINTAINER
