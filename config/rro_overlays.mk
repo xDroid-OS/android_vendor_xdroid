@@ -1,7 +1,7 @@
 # RRO Overlays
 PRODUCT_PACKAGES += \
     NetworkStackOverlay \
-    PixelLauncherXdroidOverlay \
+    PixelLauncherCustomOverlay \
     PixelDocumentsUIGoogleOverlay \
     BuiltInPrintServiceOverlay \
     GooglePermissionControllerOverlay \
