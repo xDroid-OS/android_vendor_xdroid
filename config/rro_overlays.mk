@@ -1,7 +1,7 @@
 # RRO Overlays
 PRODUCT_PACKAGES += \
     NetworkStackOverlay \
-    PixelLauncherCustomOverlay \
+    PixelLauncherXdroidOverlay \
     PixelDocumentsUIGoogleOverlay \
     BuiltInPrintServiceOverlay \
     GooglePermissionControllerOverlay \
@@ -27,3 +27,9 @@ PRODUCT_PACKAGES += \
     SystemUIGoogleOverlay \
     StorageManagerGoogleOverlay \
     FlipendoOverlay
+
+# XDSettingsOverlay
+ifdef XDROID_MAINTAINER
+PRODUCT_PACKAGES += \
+    SettingsXDOverlay
+endif

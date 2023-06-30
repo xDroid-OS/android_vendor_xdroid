@@ -1,7 +1,4 @@
-# Branding
-$(call inherit-product, vendor/aosp/config/branding.mk)
-
-PRODUCT_BRAND ?= PixelExperience
+PRODUCT_BRAND ?= xDroidOS
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 
@@ -50,15 +47,15 @@ endif
 
 # Some permissions
 PRODUCT_COPY_FILES += \
-    vendor/aosp/config/permissions/privapp-permissions-lineagehw.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/privapp-permissions-lineagehw.xml
+    vendor/xdroid/config/permissions/privapp-permissions-lineagehw.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/privapp-permissions-lineagehw.xml
 
 # Copy all custom init rc files
 PRODUCT_COPY_FILES += \
-    vendor/aosp/prebuilt/common/etc/init/init.pixelexperience-updater.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/init.pixelexperience-updater.rc
+    vendor/xdroid/prebuilt/common/etc/init/init.xdroid-updater.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/init.xdroid-updater.rc
 
 # Enable Android Beam on all targets
 PRODUCT_COPY_FILES += \
-    vendor/aosp/config/permissions/android.software.nfc.beam.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.software.nfc.beam.xml
+    vendor/xdroid/config/permissions/android.software.nfc.beam.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.software.nfc.beam.xml
 
 # Enable SIP+VoIP on all targets
 PRODUCT_COPY_FILES += \
@@ -74,7 +71,7 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 
 # Power whitelist
 PRODUCT_COPY_FILES += \
-    vendor/aosp/config/permissions/custom-power-whitelist.xml:system/etc/sysconfig/custom-power-whitelist.xml
+    vendor/xdroid/config/permissions/xdroid-power-whitelist.xml:system/etc/sysconfig/xdroid-power-whitelist.xml
 
 # Do not include art debug targets
 PRODUCT_ART_TARGET_INCLUDE_DEBUG_BUILD := false
@@ -110,10 +107,10 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 
 # Overlays
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += \
-    vendor/aosp/overlay
+    vendor/xdroid/overlay
 
 PRODUCT_PACKAGE_OVERLAYS += \
-    vendor/aosp/overlay/common
+    vendor/xdroid/overlay/common
 
 # TouchGestures
 PRODUCT_PACKAGES += \
@@ -207,22 +204,25 @@ PRODUCT_PACKAGES += \
     NexusLauncherResOverlay
 
 # Audio
-$(call inherit-product, vendor/aosp/config/audio.mk)
+$(call inherit-product, vendor/xdroid/config/audio.mk)
 
 # Bootanimation
-$(call inherit-product, vendor/aosp/config/bootanimation.mk)
+$(call inherit-product, vendor/xdroid/config/bootanimation.mk)
 
 # Fonts
-$(call inherit-product, vendor/aosp/config/fonts.mk)
+$(call inherit-product, vendor/xdroid/config/fonts.mk)
 
 # GMS
 $(call inherit-product, vendor/gms/products/gms.mk)
 
-# OTA
-$(call inherit-product, vendor/aosp/config/ota.mk)
+# Signed
+$(call inherit-product, vendor/xdroid/config/signed.mk)
+
+# Version
+$(call inherit-product, vendor/xdroid/config/version.mk)
 
 # RRO Overlays
-$(call inherit-product, vendor/aosp/config/rro_overlays.mk)
+$(call inherit-product, vendor/xdroid/config/rro_overlays.mk)
 
 # Pixel Framework
 $(call inherit-product, vendor/pixel-framework/config.mk)
